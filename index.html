@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北平城春 - 火种</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题区域 -->
+        <header class="header">
+            <h1 class="title">北平城春 · 火种</h1>
+            <p class="subtitle">一九四九年的春天，暗流涌动</p>
+        </header>
+
+        <!-- 背景介绍 -->
+        <section id="intro-section" class="section">
+            <div class="intro-card">
+                <h2>背景故事</h2>
+                <p>一九四九年春天，北平城刚刚解放，但暗流仍在涌动。你是一名地下工作者，代号"火种"，肩负着重要的使命。在这个充满危险与机遇的时代，每一个选择都可能改变历史的走向...</p>
+                <button id="start-btn" class="btn-primary">开始游戏</button>
+            </div>
+        </section>
+
+        <!-- 角色选择 -->
+        <section id="character-section" class="section hidden">
+            <h2>选择你的角色</h2>
+            <div class="characters">
+                <div class="character-card" data-role="student">
+                    <h3>学生领袖</h3>
+                    <p>热血青年，组织学生运动</p>
+                </div>
+                <div class="character-card" data-role="journalist">
+                    <h3>进步记者</h3>
+                    <p>用笔杆子战斗的新闻工作者</p>
+                </div>
+                <div class="character-card" data-role="merchant">
+                    <h3>爱国商人</h3>
+                    <p>暗中支持革命事业的商人</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 游戏主界面 -->
+        <section id="game-section" class="section hidden">
+            <div class="game-container">
+                <!-- 角色信息和积分 -->
+                <div class="character-info">
+                    <div class="info-row">
+                        <div class="info-left">
+                            <h3 id="current-role">角色：</h3>
+                            <p id="role-description"></p>
+                        </div>
+                        <div class="info-right">
+                            <div class="score-display">
+                                <span class="score-label">积分：</span>
+                                <span id="score-value" class="score-value">0</span>
+                            </div>
+                            <div class="round-display">
+                                <span class="round-label">回合：</span>
+                                <span id="round-value" class="round-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 对话区域 -->
+                <div class="dialogue-area">
+                    <div id="dialogue-history" class="dialogue-history">
+                        <div class="message npc-message">
+                            <div class="message-content">
+                                <strong>系统：</strong>欢迎来到北平城，火种同志。请告诉我你的名字。
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 选项区域 -->
+                    <div id="options-area" class="options-area hidden">
+                        <h4>请选择：</h4>
+                        <div id="options-container" class="options-container">
+                            <!-- 选项按钮将动态生成 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 输入区域（仅在需要时显示） -->
+                    <div id="input-area" class="input-area hidden">
+                        <input type="text" id="user-input" placeholder="输入你的回复..." />
+                        <button id="send-btn" class="btn-send">发送</button>
+                    </div>
+                </div>
+
+                <!-- 操作按钮 -->
+                <div class="actions">
+                    <button id="restart-btn" class="btn-secondary">重新开始</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 结局展示 -->
+        <section id="ending-section" class="section hidden">
+            <div class="ending-card">
+                <h2 id="ending-title">游戏结束</h2>
+                <div id="ending-content" class="ending-content"></div>
+                <div class="ending-stats">
+                    <p>最终积分：<span id="final-score">0</span></p>
+                    <p>总回合数：<span id="final-rounds">0</span></p>
+                </div>
+                <button id="back-to-menu-btn" class="btn-primary">返回主菜单</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
